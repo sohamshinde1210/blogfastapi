@@ -1,59 +1,38 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog Dashboard</title>
-</head>
-<body>
+<link rel="stylesheet" href="/frontend/style.css">
 
-    <h1>Blog Dashboard</h1>
+<div class="container">
 
-    <a href="/create">
-        Create Blog
-    </a>
+    <header>
+        <h1>📝 Blog Dashboard</h1>
+        <a href="/create" class="btn">+ Create Blog</a>
+    </header>
 
-    <br><br>
+    <div class="search-box">
+        <input type="text" placeholder="Search blogs...">
+    </div>
 
-    <input type="text" placeholder="Search Blogs">
+    <div class="blog-grid">
 
-    <hr>
+        {% for blog in blogs %}
+        <div class="blog-card">
+            <h2>{{ blog.title }}</h2>
 
-    {% for blog in blogs %}
+            <p class="author">
+                By {{ blog.author }}
+            </p>
 
-    <div class="card">
+            <p class="content">
+                {{ blog.content[:120] }}...
+            </p>
 
-        <h2>{{ blog.title }}</h2>
-
-        <p>
-            Author: {{ blog.author }}
-        </p>
-
-        <p>
-            {{ blog.content[:100] }}...
-        </p>
-
-        <a href="/blog/{{ blog.id }}">
-            View
-        </a>
-
-        &nbsp;
-
-        <a href="/edit/{{ blog.id }}">
-            Edit
-        </a>
-
-        &nbsp;
-
-        <a href="/delete/{{ blog.id }}">
-            Delete
-        </a>
+            <div class="actions">
+                <a href="/blog/{{ blog.id }}" class="view">View</a>
+                <a href="/edit/{{ blog.id }}" class="edit">Edit</a>
+                <a href="/delete/{{ blog.id }}" class="delete">Delete</a>
+            </div>
+        </div>
+        {% endfor %}
 
     </div>
 
-    <hr>
-
-    {% endfor %}
-
-</body>
-</html>
+</div>

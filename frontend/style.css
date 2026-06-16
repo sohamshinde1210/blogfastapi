@@ -1,27 +1,145 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI, sans-serif;
+}
+
 body{
-    font-family:Segoe UI;
     background:#f4f7fc;
+    color:#1e293b;
 }
 
-.card{
-    background:white;
-    padding:20px;
-    border-radius:15px;
-    margin:20px;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
 }
 
-button{
-    background:#3b82f6;
+.header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.logo-icon{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:24px;
     color:white;
-    border:none;
-    padding:10px 20px;
-    border-radius:8px;
 }
 
-input,
-textarea{
+.logo h1{
+    font-size:38px;
+}
+
+.subtitle{
+    color:#64748b;
+}
+
+.create-btn{
+    text-decoration:none;
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+    color:white;
+    padding:14px 24px;
+    border-radius:12px;
+    font-weight:600;
+}
+
+.search-box{
+    margin-bottom:25px;
+}
+
+.search-box input{
     width:100%;
-    padding:12px;
-    margin:10px 0;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    box-shadow:0 2px 10px rgba(0,0,0,.08);
+}
+
+.blog-card{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    margin-bottom:20px;
+    box-shadow:0 4px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.blog-card:hover{
+    transform:translateY(-5px);
+}
+
+.blog-top{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.avatar{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#4f46e5,#2563eb);
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.blog-title{
+    font-size:28px;
+}
+
+.author{
+    color:#64748b;
+}
+
+.content{
+    margin-top:15px;
+    line-height:1.7;
+    color:#475569;
+}
+
+.actions{
+    margin-top:20px;
+    display:flex;
+    gap:10px;
+}
+
+.btn{
+    text-decoration:none;
+    padding:10px 18px;
+    border-radius:10px;
+    font-weight:600;
+}
+
+.view{
+    background:#dbeafe;
+    color:#2563eb;
+}
+
+.edit{
+    background:#fef3c7;
+    color:#d97706;
+}
+
+.delete{
+    background:#fee2e2;
+    color:#dc2626;
 }
